@@ -1,0 +1,25 @@
+{
+  "name": "RectMsgBoard",
+  "version": "1.0.0",
+  "description": "React+NodeJs+MongoDB完成的简易留言板",
+  "main": "app.js",
+  "dependencies": {
+    "mongodb": "^1.4.22",
+    "moment": "^2.8.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sliwey/ReactMsgBoard.git"
+  },
+  "author": "sliwey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sliwey/ReactMsgBoard/issues"
+  },
+  "homepage": "https://github.com/sliwey/ReactMsgBoard"
+}
