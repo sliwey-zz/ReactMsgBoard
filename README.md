@@ -1,4 +1,4 @@
-React+NodeJs+MongoDB完成的简易留言板
+基于React+NodeJs+MongoDB的简易留言板
 =============
 
 
