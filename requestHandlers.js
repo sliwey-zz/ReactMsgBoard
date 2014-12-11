@@ -20,32 +20,23 @@ function save(request, response) {
 
     request.on("end", function() {
         var param = querystring.parse(str);
-
-        response.writeHead(200, {"Content-Type": "text/html"});
-        response.write(util.format('%j', param));
-        response.end();
+        var data = {};
+        var now = moment().format('YYYY-MM-DD HH:mm:ss');
         
-        // var data = {};
-        // var now = moment().format('YYYY-MM-DD HH:mm:ss');
-        
-        // data.author = param.author;
-        // data.msg = param.msg;
-        // data.dtime = now;
+        data.author = param.author;
+        data.msg = param.msg;
+        data.dtime = now;
 
-        // db.save(data, function(result) {
-        //     response.writeHead(200, {"Content-Type": "application/json"});
-        //     response.write(util.format('%j', result));
-        //     response.end();
-        // });
+        db.save(data, function(result) {
+            response.writeHead(200, {"Content-Type": "application/json"});
+            response.write(util.format('%j', result));
+            response.end();
+        });
     });
 }
 
 function list(request, response) {
     var param = url.parse(request.url, true).query;
-
-    // response.writeHead(200, {"Content-Type": "application/json"});
-    // response.write(util.format('%j', params));
-    // response.end();
 
     db.list(param.page, function(result) {
         response.writeHead(200, {"Content-Type": "application/json"});
